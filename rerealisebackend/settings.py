@@ -100,7 +100,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'rerealisebackend.wsgi.application'
+# WSGI_APPLIC/ATION = 'rerealisebackend.wsgi.application'
 ASGI_APPLICATION = 'rerealisebackend.asgi.application'
 
 
@@ -214,7 +214,7 @@ SIMPLE_JWT = {
 
 AUTH_USER_MODEL = 'authentification.User'
 
-CORS_ORGIN_ALLOW_ALL = False
+CORS_ORGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True  
 
