@@ -100,7 +100,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLIC/ATION = 'rerealisebackend.wsgi.application'
+WSGI_APPLICATION = 'rerealisebackend.wsgi.application'
 ASGI_APPLICATION = 'rerealisebackend.asgi.application'
 
 
@@ -219,8 +219,9 @@ CORS_ORGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True  
 
 CORS_ALLOWED_ORIGINS = [
-    # "http://localhost:3000",
-    "https://main.d2mdmclpuokwmu.amplifyapp.com/"
+ 
+    "https://main.d2mdmclpuokwmu.amplifyapp.com",
+    "http://main.d2mdmclpuokwmu.amplifyapp.com",
 ]
 
 CORS_ALLOW_HEADERS = [
