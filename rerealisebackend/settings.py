@@ -68,10 +68,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-
     'corsheaders.middleware.CorsMiddleware',
 
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -165,13 +164,21 @@ MEDIA_URL='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 
-
-
 CHANNEL_LAYERS = {
-	"default": {
-		"BACKEND": "channels.layers.InMemoryChannelLayer"
-	}
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
 }
+
+
+# CHANNEL_LAYERS = {
+# 	"default": {
+# 		"BACKEND": "channels.layers.InMemoryChannelLayer"
+# 	}
+# }
 
 
 REST_FRAMEWORK = {
@@ -214,19 +221,19 @@ SIMPLE_JWT = {
 
 AUTH_USER_MODEL = 'authentification.User'
 
-CORS_ORGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ALLOW_CREDENTIALS = True  
+CORS_ALLOW_CREDENTIALS = True
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-#     "https://main.d2mdmclpuokwmu.amplifyapp.com",
-#     "http://main.d2mdmclpuokwmu.amplifyapp.com",
-# ]
+CORS_ALLOWED_ORIGINS = [
+    "https://main.d2mdmclpuokwmu.amplifyapp.com",
+    "http://main.d2mdmclpuokwmu.amplifyapp.com",
+]
 
 CORS_ALLOW_HEADERS = [
     'Content-Type', 
-    'Authorization', # You may need to include other headers your project uses
+    'Authorization',
+    'Access-Control-Allow-Origin', # You may need to include other headers your project uses
 ]
 
 # Configure Cross-Origin-Opener-Policy header
