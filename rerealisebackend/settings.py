@@ -218,11 +218,11 @@ CORS_ORGIN_ALLOW_ALL = True
 
 CORS_ALLOW_CREDENTIALS = True  
 
-CORS_ALLOWED_ORIGINS = [
- 
-    "https://main.d2mdmclpuokwmu.amplifyapp.com",
-    "http://main.d2mdmclpuokwmu.amplifyapp.com",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",
+#     "https://main.d2mdmclpuokwmu.amplifyapp.com",
+#     "http://main.d2mdmclpuokwmu.amplifyapp.com",
+# ]
 
 CORS_ALLOW_HEADERS = [
     'Content-Type', 
